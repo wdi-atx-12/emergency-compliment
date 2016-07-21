@@ -39,3 +39,7 @@ When the user refreshes the page, the background color changes randomly. Here is
 ```js
 colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
 ```
+
+## Licensing
+All content is licensed under a CC­BY­NC­SA 4.0 license.
+All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
