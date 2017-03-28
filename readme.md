@@ -32,7 +32,7 @@ When you visit `"/name"` (ie: `"/randy"`), the greeting should personalize itsel
 
 Allow a user to add to the list of compliments using a POST request. You can submit POST requests to the app using a form.
 
-##BONUS: 
+## CHALLENGE: 
 
 When the user refreshes the page, the background color changes randomly. Here is an array of colors you can use if you'd like:
 
