@@ -29,17 +29,19 @@ HINT: [Check this out](http://stackoverflow.com/questions/5915096/get-random-ite
 
 When you visit `"/name"` (ie: `"/randy"`), the greeting should personalize itself to the provided name. There should still be a random compliment.
 
-## Part 3: More Compliments
-
-Allow a user to add to the list of compliments using a POST request. You can submit POST requests to the app using a form.
-
-## CHALLENGE: 
+## Challenge 1: Make it Pretty
 
 When the user refreshes the page, the background color changes randomly. Here is an array of colors you can use if you'd like:
 
 ```js
 colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
 ```
+
+## Challenge 2: More Compliments
+
+Allow a user to add to the list of compliments using a POST request. You can submit POST requests to the app using a form.
+
+You may want to use the [`body-parser`](https://www.npmjs.com/package/body-parser) package to automatically parse the form variables and present them as JS objects inside the `res` object.
 
 ## Licensing
 All content is licensed under a CC­BY­NC­SA 4.0 license.
