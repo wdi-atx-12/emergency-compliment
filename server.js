@@ -18,10 +18,15 @@ app.get('/', function (req, res) {
   res.render('index', {comp: getCompliment()});
 })
 
+app.get('/:name', function (req, res) {
+  res.render('index', {comp: getCompliment(req.params.name)})
+})
+
 app.listen(3000, function () {
   console.log('listening!');
 })
 
-function getCompliment() {
-  return compliments[Math.floor(Math.random() * compliments.length)];
+function getCompliment(name) {
+  let str = name ? `${name}, ` : '';
+  return str + compliments[Math.floor(Math.random() * compliments.length)];
 }
