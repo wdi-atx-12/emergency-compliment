@@ -1,0 +1,47 @@
+// Requirements
+const express = require('express');
+const ejs = require('ejs');
+const app = express();
+
+
+var compliments = [
+  "Your instructors love you",
+  "High five = ^5",
+  "Chris thinks you\'re wicked smart!",
+  "Britney Jo is sooo proud of you! :)",
+  "Nicole would totally hire you.",
+  "It\'s almost beer o\'clock!",
+  "You\'re a full-stack unicorn! 🦄"
+];
+
+var colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
+
+// Views
+
+app.set('views', './views');
+app.set('view engine', 'ejs');
+
+
+
+// Routes
+
+app.get('/', function(request, response) {
+	var compliment = compliments[Math.floor(Math.random()*compliments.length)];
+	response.send(compliment);
+});
+
+app.get('/:name', function(request, response) {
+	var compliment = compliments[Math.floor(Math.random()*compliments.length)];
+	response.send(request.params.name + ", " + compliment);
+});
+
+app.get('/colors/:name', function(request, response) {
+	
+	response.render('index', {color: request.params.name});
+});
+
+
+// Server Start
+app.listen(3000, function() {
+	console.log("HTTP server listening on 3000");
+});
