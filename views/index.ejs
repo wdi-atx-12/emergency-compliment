@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<title>Compliment Generator</title>
+	<link href="https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body style='background-color: <%= bgcolor %>;'>
+	<header>
+		<div class="page-name">
+			Compliment Generator
+		</div>
+		<nav>
+			<a href="">Give Me More...</a>
+		</nav>
+	</header>
+	<main>
+		<div class="content">
+			<% if (user.length !== 0) { %>
+				Hello <%= user %>!!
+			<% } %>
+			<%= compliment %>
+		</div>
+	</main>
+	<footer>
+		<div>Copyright 2017. Created with &hearts; by jaylara</div>
+	</footer>
+</body></html>
