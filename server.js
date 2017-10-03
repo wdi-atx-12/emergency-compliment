@@ -24,7 +24,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/', function (req, res) {
-  console.log(req.body);
+  compliments.push(req.body.newComp);
+  res.render('index', {comp: req.body.newComp, bgColor: getBGColor()});
 })
 
 app.get('/:name', function (req, res) {
