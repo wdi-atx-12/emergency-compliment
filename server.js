@@ -6,6 +6,8 @@ const app = express();
 require('./controllers/routes.js')(app);
 
 
+
+
 const PORT = process.env.PORT || 3000;
 
 
@@ -18,19 +20,6 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerHelper('getCurrentYear', () => {
 return new Date().getFullYear();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

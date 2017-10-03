@@ -1,4 +1,10 @@
-[
+module.exports = {
+  getCompliment: function() {
+    return compliments[Math.floor(Math.random() * compliments.length)];
+  }
+};
+
+var compliments = [
  "Your smile is contagious.",
  "You look great today.",
  "You're a smart cookie.",
@@ -100,3 +106,10 @@
  "You're really something special.",
  "You're a gift to those around you."
 ]
+
+
+
+
+
+
+
