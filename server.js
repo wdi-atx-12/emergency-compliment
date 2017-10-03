@@ -2,9 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }))
 
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
 
 let compliments = [
 "Your instructors love you",
@@ -29,7 +30,7 @@ app.post('/', function (req, res) {
 })
 
 app.get('/:name', function (req, res) {
-  res.render('index', {comp: getCompliment(req.params.name)})
+  res.render('index', {comp: getCompliment(req.params.name), bgColor: getBGColor()})
 })
 
 app.listen(3000, function () {
@@ -42,6 +43,6 @@ function getCompliment(name) {
 }
 
 function getBGColor() {
-  let colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
+  let colors = ["red", "blue","light-blue","pink", "purple", "teal", "green", "orange"];
   return colors[Math.floor(Math.random() * colors.length)];
 }

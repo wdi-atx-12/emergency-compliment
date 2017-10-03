@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>complimenter</title>
+    <link rel="stylesheet" href="/css/main.css" type="text/css"></link>
   </head>
-  <body style="background-color:<%= bgColor %>">
-    <p>
+  <body class="bg-<%= bgColor %>">
+    <h1>
       <%= comp %>
-    </p>
+    </h1>
     <form action="/" method="post">
       <input type="text" name="newComp" placeholder="new compliment" />
       <input type="submit" />

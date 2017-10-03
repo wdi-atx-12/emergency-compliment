@@ -1,0 +1,29 @@
+h1 {
+  color: white;
+  text-align: center;
+}
+
+body.bg-red {
+  background: #c62828;
+}
+body.bg-pink {
+  background: #ad1457;
+}
+body.bg-purple {
+  background: #6a1b9a;
+}
+body.bg-blue {
+  background: #303f9f;
+}
+body.bg-light-blue {
+  background: #0277bd;
+}
+body.bg-teal {
+  background: #00695c;
+}
+body.bg-green {
+  background: #2e7d32;
+}
+body.bg-orange {
+  background: #ef6c00;
+}
