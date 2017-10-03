@@ -14,17 +14,14 @@ var compliments = [
   "Congratulations, you passed the whole course!",
   "You\'re a full-stack potato! 🍠"
 ]
-
 var colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
 var randomColor = colors[Math.floor(Math.random()*colors.length)]
-
 
 // GET RANDOM COMPLIMENT ON HOMEPAGE
 app.get("/", function getRandomCompliments(req, res){
   var givenName = "";
   var ranCompliment = compliments[Math.floor(Math.random()*compliments.length)];
   var randomColor = colors[Math.floor(Math.random()*colors.length)]
-
 
   res.render("index", {randomCompliment: ranCompliment, randomBackgroundColor: randomColor, nameGiven: givenName});
 });
@@ -35,9 +32,7 @@ app.get("/:name", function(req, res){
   var ranCompliment = compliments[Math.floor(Math.random()*compliments.length)];
   var randomColor = colors[Math.floor(Math.random()*colors.length)]
 
-
   res.render("index", {randomCompliment: ranCompliment, randomBackgroundColor: randomColor, nameGiven: givenName});
-
 });
 
 //START MY SERVER
