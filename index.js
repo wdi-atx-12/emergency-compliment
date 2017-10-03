@@ -1,5 +1,6 @@
 // Requirements
 const express = require('express');
+const ejs = require('ejs');
 const app = express();
 
 
@@ -23,6 +24,11 @@ app.set('view engine', 'ejs');
 
 
 // Routes
+
+app.get('/', function(request, response) {
+	var compliment = compliments[Math.floor(Math.random()*compliments.length)];
+	response.send(compliment);
+});
 
 app.get('/:name', function(request, response) {
 	var compliment = compliments[Math.floor(Math.random()*compliments.length)];
