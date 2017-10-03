@@ -1,0 +1,26 @@
+{
+  "name": "emergency-compliment",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaylara/emergency-compliment.git"
+  },
+  "keywords": [],
+  "author": "Jay Lara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaylara/emergency-compliment/issues"
+  },
+  "homepage": "https://github.com/jaylara/emergency-compliment#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.1"
+  }
+}

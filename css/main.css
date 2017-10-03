@@ -1,0 +1,74 @@
+body {
+	font-family: 'Raleway','Droid Serif', sans-serif;
+
+	margin: 0 auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header, main, footer {
+	display:flex;
+	align-items: center;
+}
+
+header {
+	background-color: rgba(102,123,131, 0.75);
+	color: rgb(255,255,255);
+	border-bottom: 5px solid rgba(12,40,21, .75);
+	box-shadow: 10px 0px 10px rgba(0,0,0, .75);
+
+	letter-spacing: -0.03em;
+
+	margin: 0 0 25px 0;
+	padding-left: 15px;
+	justify-content: space-between;
+}
+
+header .page-name {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+nav {
+	font-size: 2em;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0;
+}
+
+nav a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	transition: .3s background-color;
+	padding: 20px 30px;
+	background-color: rgba(203,203,203, 0.75);
+}
+
+nav a:hover {
+	background-color: rgba(12,40,21,.75);
+	color: #fff;
+}
+
+main {
+	flex: 1;
+	justify-content: center;
+}
+
+main .content {
+	background-color: rgba(102,123,131,.90);
+	border-radius: 15px;
+	border: 5px solid rgba(12,40,21, .75);
+	font-size: 3em;
+	padding: 50px;
+	max-width: 30%;
+	text-align: center;
+}
+
+footer {
+	background-color: rgba(102,123,131, 0.75);
+	margin: 25px 0 0 0;
+	height: 100px;
+	justify-content: center;
+}
