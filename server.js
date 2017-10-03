@@ -11,17 +11,23 @@ var compliments = [
   "It\'s almost beer o\'clock!",
   "You\'re a full-stack unicorn! 🦄"
 ]
+var complimentIndex = Math.floor(Math.random()*compliments.length);
+var compliment = compliments[complimentIndex];
 
 // app code
 app.get('/', function(req, res){
-  var complimentIndex = Math.floor(Math.random()*compliments.length);
-  var compliment = compliments[complimentIndex];
   res.send('<h1>Hey, squirrel.</h1>' + compliment + ' <a href=#>Another?</a>');
 })
 
+// customize with name
 app.get('/:name', function(req, res){
   console.log('name entered');
+  var name = req.params.name;
+  res.send('<h1>Hey, ' + name + '.</h1>' + compliment + ' <a href=#>Another?</a>');
 })
+
+// random background change
+colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
 
 // app start
 app.listen(3000, function(){
