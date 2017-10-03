@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
   res.render('index', {comp: getCompliment(), bgColor: getBGColor()});
 })
 
-app.post('/', function (req, res) {
+app.post('/add', function (req, res) {
   compliments.push(req.body.newComp);
   res.render('index', {comp: req.body.newComp, bgColor: getBGColor()});
 })
