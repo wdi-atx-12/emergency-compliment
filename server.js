@@ -1,5 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(bodyParser.json());
 
 let compliments = [
 "Your instructors love you",
@@ -16,6 +21,10 @@ app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
   res.render('index', {comp: getCompliment(), bgColor: getBGColor()});
+})
+
+app.post('/', function (req, res) {
+  console.log(req.body);
 })
 
 app.get('/:name', function (req, res) {
