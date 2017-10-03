@@ -1,6 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 let compliments = [
   "Your instructors love you",
@@ -14,13 +19,12 @@ let compliments = [
 
 colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
 
+
+
 app.get('/', function(req, res) {
-
-
-    //"
     var color = colors[Math.floor(Math.random()*colors.length)];
     var compliment = compliments[Math.floor(Math.random()*compliments.length)];
-    res.send(`<body style="background-color:${color}">${compliment}</body>`);
+    res.render('index', {color: color, compliment: compliment});
 });
 
 
@@ -37,7 +41,13 @@ app.get('/:name', function(req, res) {
     ];
     var color = colors[Math.floor(Math.random()*colors.length)];
     var compliment = compliments[Math.floor(Math.random()*compliments.length)];
-    res.send(`<body style="background-color:${color}">${compliment}</body>`);
+    res.render('index', {color: color, compliment: compliment});
+});
+
+app.post('/', function(req, res) {
+    //console.log(req.body.compliment);
+    compliments.push(req.body.compliment);
+    res.redirect('/');
 });
 
 app.listen(3000, function() {

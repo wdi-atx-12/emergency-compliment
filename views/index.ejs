@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Emergency Compliments</title>
+    </head>
+    <body style="background-color:<%= color %>;">
+        <h1><%= compliment %></h1>
+        <!-- Simple form which will send a POST request -->
+        <form action="/" method="post">
+          <label for="complimentPost">Enter Compliment:</label>
+          <input id="complimentPost" type="text" name="compliment">
+          <input type="submit" value="Save">
+        </form>
+    </body>
+</html>
