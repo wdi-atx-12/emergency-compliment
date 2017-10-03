@@ -1,0 +1,23 @@
+{
+  "name": "emergency-compliment",
+  "version": "1.0.0",
+  "description": "Fran HW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CescoIV/emergency-compliment.git"
+  },
+  "author": "Francisco Ordaz IV",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CescoIV/emergency-compliment/issues"
+  },
+  "homepage": "https://github.com/CescoIV/emergency-compliment#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.1"
+  }
+}
