@@ -14,7 +14,7 @@ var compliments = [
   "You\'re a full-stack unicorn! 🦄"
 ];
 
-colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
+var colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
 
 // Views
 
@@ -33,6 +33,11 @@ app.get('/', function(request, response) {
 app.get('/:name', function(request, response) {
 	var compliment = compliments[Math.floor(Math.random()*compliments.length)];
 	response.send(request.params.name + ", " + compliment);
+});
+
+app.get('/colors/:name', function(request, response) {
+	
+	response.render('index', {color: request.params.name});
 });
 
 
