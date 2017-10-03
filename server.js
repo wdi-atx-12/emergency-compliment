@@ -15,7 +15,7 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-  res.render('index', {comp: getCompliment()});
+  res.render('index', {comp: getCompliment(), bgColor: getBGColor()});
 })
 
 app.get('/:name', function (req, res) {
@@ -29,4 +29,9 @@ app.listen(3000, function () {
 function getCompliment(name) {
   let str = name ? `${name}, ` : '';
   return str + compliments[Math.floor(Math.random() * compliments.length)];
+}
+
+function getBGColor() {
+  let colors = ["#fd6c3b", "#4edacf","#65a576","#f2d83d"];
+  return colors[Math.floor(Math.random() * colors.length)];
 }
