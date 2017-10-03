@@ -14,8 +14,9 @@
       <script type="text/javascript" src="/js/main.js"></script>
       <script>
         function user(){
-          var names="/" + document.getElementById("name").value;
-          location.href=names;
+          var name = document.getElementById("name").value;
+          var url = "http://localhost:3000/"+name;
+           location.href=url;
           return false;
         }
        </script>
@@ -24,18 +25,25 @@
     <body>
 
       <h1>Emergency Compliments</h1>
-      <p>Hello, <%= passcompliment %>!</p>
+
+        <!-- no name set yet -->
+        <% if (name == undefined || name == null) { %>
+
+          <h2>Hello <%= name %> <%= passcompliment %>!</h2>
+          <h3> What's your name?</h3>
+
+          <form onSubmit="user();">
+          <input type="text" name="name" id="name">
+            <input type="submit" value="submit">
+          </form>
 
 
-      <p>Do you come here often? What's your name?</p>
+        <!-- if name answered -->
+        <% } else { %>
 
+          <h2>Hello <%= name %>! <%= passcompliment %>!</h2>
 
-      <form onSubmit="return user();">
-      <input type="text" name="name" id="name">
-        <input type="submit" value="submit">
-      </form>
-
-
+        <% } %>
 
     </body>
   </html>

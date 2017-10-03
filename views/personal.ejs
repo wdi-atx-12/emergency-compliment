@@ -4,22 +4,25 @@
     <head>
       <meta charset="utf-8">
       <title>Emergency Compliments</title>
+      <link rel='stylesheet' href='/css/main.css'/>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script>
+        function reload(){
+          window.location.reload();
+        }
+       </script>
 
-       <link rel='stylesheet' href='/css/main.css'/>
-
-        <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-
-       <script type="text/javascript" src="/js/main.js"></script>
     </head>
 
     <body>
-
       <h1>Emergency Compliments</h1>
-      <p>Hello, <%= name %>, <%= passcompliment %>!</p>
+      <h2>Hello, <%= name %>, <%= passcompliment %>!</h2>
 
+      <h3>feed me more compliments!</h3>
+      <form onSubmit="return reload();">
+        <input type="submit" value="feed me!">
+      </form>
 
     </body>
   </html>
