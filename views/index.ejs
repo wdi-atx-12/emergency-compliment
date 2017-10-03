@@ -4,13 +4,37 @@
     <head>
       <meta charset="utf-8">
       <title>Emergency Compliments</title>
+
+      <link rel='stylesheet' href='/css/main.css'/>
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script>
+        function user(){
+          var names="/" + document.getElementById("name").value;
+          location.href=names;
+          return false;
+        }
+       </script>
     </head>
 
     <body>
 
       <h1>Emergency Compliments</h1>
+      <p>Hello, <%= passcompliment %>!</p>
 
-      <p> Hi i will be a compliment</p>
+
+      <p>Do you come here often? What's your name?</p>
+
+
+      <form onSubmit="return user();">
+      <input type="text" name="name" id="name">
+        <input type="submit" value="submit">
+      </form>
+
 
 
     </body>
