@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html>
+
+    <head>
+      <meta charset="utf-8">
+      <title>Emergency Compliments</title>
+
+      <link rel='stylesheet' href='/css/main.css'/>
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script>
+        function user(){
+          var name = document.getElementById("name").value;
+          var url = "http://localhost:3000/"+name;
+           location.href=url;
+          return false;
+        }
+       </script>
+    </head>
+
+    <body>
+
+      <h1>Emergency Compliments</h1>
+
+        <!-- no name set yet -->
+        <% if (name == undefined || name == null) { %>
+
+          <h2>Hello <%= name %> <%= passcompliment %>!</h2>
+          <h3> What's your name?</h3>
+
+          <form onSubmit="user();">
+          <input type="text" name="name" id="name">
+            <input type="submit" value="submit">
+          </form>
+
+
+        <!-- if name answered -->
+        <% } else { %>
+
+          <h2>Hello <%= name %>! <%= passcompliment %>!</h2>
+
+        <% } %>
+
+    </body>
+  </html>
