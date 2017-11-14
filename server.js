@@ -1,6 +1,7 @@
 //Dependencies
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 var compliments = [
   "Your instructors love you",
   "High five = ^5",
@@ -19,15 +20,35 @@ function capitalizeFirstLetter(string) {
 };
 
 
-//Routes
+//App Setup
+app.use(bodyParser.urlencoded({extended: false}));
+
 app.set('views', './views');
 app.set('view engine', 'ejs');
+
+app.use('/', express.static('./public'));
+
+//Routes
+
+app.get('/add', function(req,res){
+  res.render('add');
+})
+
+app.post('/add', function(req,res){
+  const newCompliment = (req.body['new-compliment-text']);
+  if (newCompliment && newCompliment.length > 0){
+    compliments.push(newCompliment);
+    res.send("added compliment");
+  }else{
+    res.send("nah, try adding another one.");
+  };
+})
 
 app.get('/', function(req, res){
   var complimentToSend = compliments[Math.floor(Math.random()*compliments.length)];
   var backgroundColor = colors[Math.floor(Math.random()*colors.length)];
   var textColor = colors[Math.floor(Math.random()*colors.length)];
-  res.render('index', {compliment: complimentToSend,color: textColor, background: backgroundColor});
+  res.render('index', {compliment: complimentToSend, color: textColor, background: backgroundColor});
 })
 
 app.get('/:name', function(req, res){
@@ -41,5 +62,4 @@ app.get('/:name', function(req, res){
 //Server Start
 app.listen(3000, function(){
   console.log("we out here servering");
-
 })
